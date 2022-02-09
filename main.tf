@@ -454,6 +454,19 @@ resource "aws_autoscaling_group" "this" {
 }
 
 ################################################################################
+# capacity provider ASG
+################################################################################
+
+resource "aws_ecs_capacity_provider" "provider-asg" {
+  name = "provider-asg"
+
+  auto_scaling_group_provider {
+    auto_scaling_group_arn = var.autoscaling_group_arn
+  }
+
+}
+
+################################################################################
 # Autoscaling group schedule
 ################################################################################
 resource "aws_autoscaling_schedule" "this" {

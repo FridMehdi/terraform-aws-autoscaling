@@ -127,6 +127,13 @@ variable "placement_group" {
   default     = null
 }
 
+variable "autoscaling_group_arn" {
+  description = "The name arn id of the ressource group to attach to ECS"
+  type        = string
+  default     = null
+}
+
+
 variable "health_check_type" {
   description = "`EC2` or `ELB`. Controls how health checking is done"
   type        = string
